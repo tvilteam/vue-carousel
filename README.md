@@ -94,6 +94,7 @@ export default {
 | tagName                     | String  | slide   | Name (tag) of slide component. Overwrite with coponent name when extending slide component.                                                                                                                                                                                           |
 | touchDrag                   | Boolean | true    | Flag to toggle touch dragging.                                                                                                                                                                                                                                                        |
 | value                       | Number  |         | Support for v-model functionality. Setting this value will change the current page to the number inputted (if between 0 and pageCount).                                                                                                                                               |
+| forcedVisibility            | Boolean | false    | Flag to toggle VueCarousel-inner visibility. |
 
 
 ### Events

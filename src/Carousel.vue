@@ -19,7 +19,7 @@
           'ms-flex-preferred-size': `${slideWidth}px`,
           'webkit-flex-basis': `${slideWidth}px`,
           'flex-basis': `${slideWidth}px`,
-          'visibility': slideWidth ? 'visible' : 'hidden',
+          'visibility': innerVisibility,
           'height': `${currentHeight}`,
           'padding-left': `${padding}px`,
           'padding-right': `${padding}px`
@@ -343,6 +343,13 @@ export default {
     rtl: {
       type: Boolean,
       default: false
+    },
+    /**
+     * Forced VueCarousel-inner visibility
+     */
+    forcedVisibility: {
+      type: Boolean,
+      default: false,
     }
   },
   watch: {
@@ -512,6 +519,9 @@ export default {
     padding() {
       const padding = this.spacePadding;
       return padding > 0 ? padding : false;
+    },
+    innerVisibility() {
+      return this.forcedVisibility || this.slideWidth ? 'visible' : 'hidden'
     }
   },
   methods: {
